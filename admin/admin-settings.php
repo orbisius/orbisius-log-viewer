@@ -24,14 +24,10 @@ $debug_constants = [
     margin-top: 0;
 }
 
-.orbisius-log-viewer-wrapper #poststuff .inside {
-    padding: 0 12px;
-    margin: 0;
-}
-
+.orbisius-log-viewer-wrapper #poststuff .inside,
 .orbisius-log-viewer-wrapper .inside {
     margin: 0;
-    padding: 20px;
+    padding: 12px;
 }
 
 .orbisius-log-viewer-extra-title-info {
@@ -122,12 +118,18 @@ $debug_constants = [
 /* Table Styles */
 .orbisius-log-viewer-wrapper .widefat {
     margin-top: 10px;
+    margin-left: 0;
 }
 
 .orbisius-log-viewer-wrapper .widefat td,
 .orbisius-log-viewer-wrapper .widefat th {
     vertical-align: middle;
     text-align: left;
+}
+
+#orbisius-log-viewer-results {
+    margin: 0;
+    padding: 0;
 }
 
 .orbisius-log-viewer-download-btn {
