@@ -16,6 +16,8 @@ $debug_constants = [
 <style>
 .orbisius-log-viewer-wrapper {
     max-width: 1200px;
+    margin-left: 0;
+    padding-left: 0;
 }
 
 .orbisius-log-viewer-wrapper .postbox {
@@ -122,8 +124,10 @@ $debug_constants = [
     margin-top: 10px;
 }
 
-.orbisius-log-viewer-wrapper .widefat td {
+.orbisius-log-viewer-wrapper .widefat td,
+.orbisius-log-viewer-wrapper .widefat th {
     vertical-align: middle;
+    text-align: left;
 }
 
 .orbisius-log-viewer-download-btn {
