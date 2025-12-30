@@ -46,8 +46,8 @@ class Orbisius_Log_Viewer_Admin {
 
         $my_links = [
             'view_logs' => sprintf('<a href="%s">View Logs</a>', $url_esc),
-            'customization' => sprintf('<a href="%s" target="_blank">Request Customization</a>', $contact_url_esc),
-            'contact' => sprintf('<a href="%s" target="_blank">Contact Us</a>', $contact_url_esc),
+            'customization' => sprintf('<a href="%s" target="_blank" rel="noopener">Customization</a>', $contact_url_esc),
+            'contact' => sprintf('<a href="%s" target="_blank" rel="noopener">Contact Us</a>', $contact_url_esc),
         ];
         $links = array_merge($my_links, $links);
         return $links;
