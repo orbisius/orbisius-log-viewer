@@ -40,8 +40,14 @@ class Orbisius_Log_Viewer_Admin {
     public function addPluginActionLinks($links) {
         $url = admin_url('options-general.php?page=orbisius-log-viewer');
         $url_esc = esc_url($url);
+
+        $contact_url = 'https://orbisius.com/contact/quick-contact/?utm_source=orbisius-log-viewer&utm_medium=plugin-action-links&utm_campaign=contact';
+        $contact_url_esc = esc_url($contact_url);
+
         $my_links = [
             'view_logs' => sprintf('<a href="%s">View Logs</a>', $url_esc),
+            'customization' => sprintf('<a href="%s" target="_blank">Request Customization</a>', $contact_url_esc),
+            'contact' => sprintf('<a href="%s" target="_blank">Contact Us</a>', $contact_url_esc),
         ];
         $links = array_merge($my_links, $links);
         return $links;
