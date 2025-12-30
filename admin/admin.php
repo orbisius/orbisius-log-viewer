@@ -25,6 +25,26 @@ class Orbisius_Log_Viewer_Admin {
         add_action('admin_menu', [$this, 'addMenuPages']);
         add_action('wp_ajax_orbisius_log_viewer_load_log_files', [$this, 'loadLogFilesAjax']);
         add_action('wp_ajax_orbisius_log_viewer_download_log_file', [$this, 'downloadLogFileAjax']);
+
+        // Add action link in plugins list
+        $plugin_basename = plugin_basename(ORBISIUS_LOG_VIEWER_BASE_PLUGIN);
+        add_filter('plugin_action_links_' . $plugin_basename, [$this, 'addPluginActionLinks']);
+    }
+
+    /**
+     * Add action links to the plugins list.
+     *
+     * @param array $links Existing action links.
+     * @return array Modified action links.
+     */
+    public function addPluginActionLinks($links) {
+        $url = admin_url('options-general.php?page=orbisius-log-viewer');
+        $url_esc = esc_url($url);
+        $my_links = [
+            'view_logs' => sprintf('<a href="%s">View Logs</a>', $url_esc),
+        ];
+        $links = array_merge($my_links, $links);
+        return $links;
     }
 
     /**
